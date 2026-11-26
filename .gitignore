@@ -1,0 +1,11 @@
+# LISANS VERILERI VE GIZLI DOSYALAR HICBIR ZAMAN GIT
+private_data/
+storage/
+.env
+.env.*
+!.env.example
+*.log
+*.bak
+licenses*.json
+node_modules/
+.DS_Store

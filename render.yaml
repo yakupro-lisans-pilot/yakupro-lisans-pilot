@@ -1,0 +1,24 @@
+# YAKUPRO 3.38.6 - Render pilot blueprint.
+# UCRETLIDIR: Kalici disk ve sunucu shell erisimi icin ucretli plan gerekir.
+# Lisans verisi /opt/render/project/src/storage/ dizininde saklanir.
+services:
+  - type: web
+    runtime: node
+    name: yakupro-lisans-pilot
+    region: frankfurt
+    plan: 0.5c-512mb
+    buildCommand: npm install --omit=dev
+    startCommand: node server.js
+    healthCheckPath: /v1/health
+    autoDeployTrigger: 'off'
+    envVars:
+      - key: YAKUPRO_HOST
+        value: 0.0.0.0
+      - key: YAKUPRO_DATA_DIR
+        value: /opt/render/project/src/storage
+      - key: NODE_ENV
+        value: production
+    disk:
+      name: yakupro-license-data
+      mountPath: /opt/render/project/src/storage
+      sizeGB: 1

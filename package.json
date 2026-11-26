@@ -1,0 +1,14 @@
+{
+  "name": "yakupro-license-api",
+  "version": "3.38.6",
+  "private": true,
+  "description": "YAKUPRO online license server (owner only)",
+  "engines": {
+    "node": ">=20 <27"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test_integration.js",
+    "admin": "node admin.js"
+  }
+}
